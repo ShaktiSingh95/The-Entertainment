@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import SwiftyJSON
 class Celebs{
     
+    var posterImage: UIImage!
+    init(json: JSON){
+        
+        posterImage = nil
+        
+    }
     
 }

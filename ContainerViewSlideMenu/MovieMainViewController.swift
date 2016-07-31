@@ -11,10 +11,9 @@ import UIKit
 class MovieMainViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var popularMoviesCollectionView: UICollectionView!
-    var popualarMovies = [Movies]()
-    
     @IBOutlet weak var movieCategoryTableView: UITableView!
     private var tableContent = ["Upcoming","Top Rated","Most Popular"]
+    var popualarMovies = [Movies]()
     override func viewDidLoad() {
         super.viewDidLoad()
         popularMoviesCollectionView.dataSource = self

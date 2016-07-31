@@ -46,7 +46,7 @@ class AppModel{
         }
         
     }
-    class func fetchPerticularCelebs(queryUrl:Constants.ApiSearchQueries.CelebsRelated,handler: [Tv]->Void){
+    class func fetchPerticularCelebs(queryUrl:Constants.ApiSearchQueries.CelebsRelated,handler: [Celebs]->Void){
         
         var parameters:[String:AnyObject]=["api_key":Constants.ApiSearchQueries.apiKey.rawValue]
         Alamofire.request(.GET, queryUrl.rawValue, parameters: parameters).responseJSON(){

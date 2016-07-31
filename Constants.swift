@@ -36,7 +36,7 @@ class Constants{
         enum TvRelated:String{
             
             case airedToday="https://api.themoviedb.org/3/tv/airing_today"
-            case onTheAirToday="https://api.themoviedb.org/3/tv/on_the_air"
+            case onTheAir="https://api.themoviedb.org/3/tv/on_the_air"
             case latest="https://api.themoviedb.org/3/tv/latest"
             case topRated="https://api.themoviedb.org/3/tv/top_rated"
             case popular="https://api.themoviedb.org/3/tv/popular"

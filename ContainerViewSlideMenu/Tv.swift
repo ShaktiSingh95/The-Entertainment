@@ -9,9 +9,9 @@
 import Foundation
 import SwiftyJSON
 class Tv{
-    
+    var posterImage:UIImage!
     init(json: JSON){
-        
+       posterImage = nil
     }
     
 }
