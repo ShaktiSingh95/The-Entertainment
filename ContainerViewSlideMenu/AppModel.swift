@@ -9,18 +9,56 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-public enum movieMethod{
-    
-    case topRated
-    case popular
-    case upcoming
-    
-}
+
 class AppModel{
     
-    class func fetchPerticularMovies(type: movieMethod,numberOfItems: Int,handler: [Movies]->Void){
-//        Alamofire.request(.GET, <#T##URLString: URLStringConvertible##URLStringConvertible#>, parameters: <#T##[String : AnyObject]?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##[String : String]?#>)
-//        
+    class func fetchPerticularMovies(queryUrl:Constants.ApiSearchQueries.MovieRelated,handler: [Movies]->Void){
+        var parameters:[String:AnyObject] = ["api_key": Constants.ApiSearchQueries.apiKey.rawValue]
+        Alamofire.request(.GET, queryUrl.rawValue, parameters: parameters).responseJSON(){
+            
+            response in
+            var movies = [Movies]()
+            print(response.result.value!)
+            let json = response.result.value!
+            //          for subJson in json["results"]{
+            //
+            
+            //   movies.append(Movies(subJson))
+            //                movies.append(Movies(subJson))
+            //
+            //      }
+            //handler(movies)
+        }
     }
-    
+    class func fetchPerticularTvShows(queryUrl:Constants.ApiSearchQueries.TvRelated,handler: [Tv]->Void){
+        
+        var parameters:[String:AnyObject]=["api_key":Constants.ApiSearchQueries.apiKey.rawValue]
+        Alamofire.request(.GET, queryUrl.rawValue, parameters: parameters).responseJSON(){
+            
+            response in
+            var tvShows = [Tv]()
+            let json = response.result.value!
+            print(json)
+            //            for subJson in json["results"]{
+            //               tvShows.append(Tv(json: subJson))
+            //}
+            
+        }
+        
+    }
+    class func fetchPerticularCelebs(queryUrl:Constants.ApiSearchQueries.CelebsRelated,handler: [Tv]->Void){
+        
+        var parameters:[String:AnyObject]=["api_key":Constants.ApiSearchQueries.apiKey.rawValue]
+        Alamofire.request(.GET, queryUrl.rawValue, parameters: parameters).responseJSON(){
+            
+            response in
+            var tvShows = [Tv]()
+            let json = response.result.value!
+            print(json)
+            //            for subJson in json["results"]{
+            //               tvShows.append(Tv(json: subJson))
+            //}
+            
+        }
+    }
 }

@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import SwiftyJSON
 class Tv{
+    
+    init(json: JSON){
+        
+    }
     
 }

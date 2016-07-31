@@ -16,6 +16,8 @@ class HomeViewController: SlideMenuController {
         
         self.addLeftBarButtonWithImage(UIImage(named: "si0010s")!)
         // Do any additional setup after loading the view.
+//        AppModel.fetchPerticularMovies(Constants.ApiSearchQueries.MovieRelated.popularMovies)
+
     }
 //    init(mainVc: String , leftVc: String){
 //        
