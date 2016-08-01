@@ -8,30 +8,62 @@
 
 import Foundation
 class Constants{
-//    
-//    struct apiSearchQueries {
-//        
-//        static let baseUrl = "https://api.themoviedb.org/3/"
-//        static let apiKey = "ce7724b78a09f5436d559f3e56ad4ffa"
-//        struct movieRelated {
-//            static let popularMovies=apiSearchQueries.baseUrl + "movie/popular"
-//            static let topRatedMovies=apiSearchQueries.baseUrl + "movie/top_rated"
-//            static let upcoming=apiSearchQueries.baseUrl + "movies/upcoming"
-//        }
-//        struct tvRelated {
-//            static let airedToday=apiSearchQueries.baseUrl + "tv/airing_today"
-//        }
-//        
-//        
-//    }
-//    
+    //
+    //    struct apiSearchQueries {
+    //
+    //        static let baseUrl = "https://api.themoviedb.org/3/"
+    //        static let apiKey = "ce7724b78a09f5436d559f3e56ad4ffa"
+    //        struct movieRelated {
+    //            static let popularMovies=apiSearchQueries.baseUrl + "movie/popular"
+    //            static let topRatedMovies=apiSearchQueries.baseUrl + "movie/top_rated"
+    //            static let upcoming=apiSearchQueries.baseUrl + "movies/upcoming"
+    //        }
+    //        struct tvRelated {
+    //            static let airedToday=apiSearchQueries.baseUrl + "tv/airing_today"
+    //        }
+    //
+    //
+    //    }
+    //
+    struct viewControllerIdentifiers{
+        
+        static let rightSliderVc = "app_right"
+        static let homeVc = "home"
+        static let homeMainVc = "home_main"
+        static let moviesVc = "movies"
+        static let moviesMainVc = "movie_main"
+        static let requestedMoviesVc = "movies_list"
+        static let tvVc = "tv"
+        static let tvMainVc = "tv_main"
+        static let requestedTvVc = "tv_list"
+        static let celebsVc = "celebs"
+        static let celebsMainVc = "celebs_main"
+        static let requestedCelebsVc = "celebs_list"
+        
+    }
+    struct cellIdentifiers{
+        
+        static let homeMainTableViewCell = "table_cell"
+        static let homeMainCollectionCellEmbeddedInTableCell = "collection_cell"
+        static let movieMainCollectionCell = "popular_movie_cell"
+        static let movieMainTableCell = "movie_table_cell"
+        static let tvMainCollectionCell = "popular_tv_cell"
+        static let tvMainTableCell = "tv_table_cell"
+        static let celebsMainCollectionCell = "popular_celebs_cell"
+        static let celebsMainTableCell = "celebs_table_cell"
+    }
+    struct imageIdentifiers{
+        
+        static let rightOptionMenuButtonImage = "si0010s"
+        
+    }
     enum ApiSearchQueries : String{
         case apiKey = "ce7724b78a09f5436d559f3e56ad4ffa"
         enum MovieRelated : String{
             case popularMovies = "https://api.themoviedb.org/3/movie/popular"
             case topRatedMovies = "https://api.themoviedb.org/3/movie/top_rated"
             case upcomingMovies = "https://api.themoviedb.org/3/movie/upcoming"
-           
+            
         }
         enum TvRelated:String{
             

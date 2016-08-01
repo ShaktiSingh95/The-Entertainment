@@ -42,7 +42,7 @@ class TvMainViewController: UIViewController,UICollectionViewDelegate,UICollecti
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         print("*****Asking for cell")
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("popular_tv_cell", forIndexPath: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.tvMainCollectionCell, forIndexPath: indexPath) as! CollectionViewCell
         cell.imageView.image = popualarTvShows[indexPath.row].posterImage
         return cell
     }
@@ -54,12 +54,30 @@ class TvMainViewController: UIViewController,UICollectionViewDelegate,UICollecti
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("tv_table_cell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifiers.tvMainTableCell)!
         cell.textLabel?.text = tableContent[indexPath.row]
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //code to take to new view controller to display demanded data
+
+        let row = indexPath.row
+        let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.requestedTvVc) as! RequestedTvListViewController
+        switch row {
+        case 0:
+            destinationVc.query = Constants.ApiSearchQueries.TvRelated.airedToday
+        case 1:
+            destinationVc.query = Constants.ApiSearchQueries.TvRelated.onTheAir
+        case 2:
+            destinationVc.query = Constants.ApiSearchQueries.TvRelated.latest
+        case 3:
+            destinationVc.query = Constants.ApiSearchQueries.TvRelated.topRated
+        case 4:
+            destinationVc.query = Constants.ApiSearchQueries.TvRelated.popular
+        default:
+            break
+        }
+        self.showViewController(destinationVc, sender: nil)
+        
     }
 
     /*

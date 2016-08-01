@@ -14,7 +14,7 @@ class HomeViewController: SlideMenuController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addLeftBarButtonWithImage(UIImage(named: "si0010s")!)
+        self.addRightBarButtonWithImage(UIImage(named: Constants.imageIdentifiers.rightOptionMenuButtonImage)!)
         // Do any additional setup after loading the view.
 //        AppModel.fetchPerticularMovies(Constants.ApiSearchQueries.MovieRelated.popularMovies)
 
@@ -29,13 +29,18 @@ class HomeViewController: SlideMenuController {
 //    required init?(coder aDecoder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
 //    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.closeRight()
+
+    }
     override func awakeFromNib(){
         
-        if let controller = self.storyboard?.instantiateViewControllerWithIdentifier("home_main") {
+        if let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.homeMainVc) {
             self.mainViewController = controller
         }
-        if let controller = self.storyboard?.instantiateViewControllerWithIdentifier("app_left") {
-            self.leftViewController = controller
+        if let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.rightSliderVc) {
+            self.rightViewController = controller
         }
         super.awakeFromNib()
         

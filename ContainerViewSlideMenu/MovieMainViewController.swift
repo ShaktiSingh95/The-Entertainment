@@ -39,7 +39,7 @@ class MovieMainViewController: UIViewController,UICollectionViewDelegate,UIColle
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         print("*****Asking for cell")
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("popular_movie_cell", forIndexPath: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.movieMainCollectionCell, forIndexPath: indexPath) as! CollectionViewCell
         cell.imageView.image = popualarMovies[indexPath.row].posterImage
         return cell
     }
@@ -51,12 +51,27 @@ class MovieMainViewController: UIViewController,UICollectionViewDelegate,UIColle
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("movie_table_cell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifiers.movieMainTableCell)!
         cell.textLabel?.text = tableContent[indexPath.row]
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //code to take to new view controller to display demanded data
+
+        let row = indexPath.row
+        let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.requestedMoviesVc) as! RequestedMovieListViewController
+        switch row{
+            
+        case 0 : destinationVc.query = Constants.ApiSearchQueries.MovieRelated.upcomingMovies
+        case 1:
+            destinationVc.query = Constants.ApiSearchQueries.MovieRelated.topRatedMovies
+        case 2:
+            destinationVc.query = Constants.ApiSearchQueries.MovieRelated.popularMovies
+        default: break
+            
+            
+        }
+        self.showViewController(destinationVc, sender: nil)
+    
     }
     /*
      // MARK: - Navigation

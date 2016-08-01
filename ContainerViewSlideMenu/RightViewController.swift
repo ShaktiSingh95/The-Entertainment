@@ -8,12 +8,12 @@
 
 import UIKit
 
-class LeftViewController: UITableViewController {
+class rightViewController: UITableViewController {
     
-    @IBOutlet var leftTableView: UITableView!
+    @IBOutlet var rightTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.leftTableView.delegate=self
+        self.rightTableView.delegate=self
         // Do any additional setup after loading the view.
     }
     
@@ -24,30 +24,30 @@ class LeftViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-       // self.navigationController?.popViewControllerAnimated(true)
+        
         if indexPath.row == 0{
-            let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier("home") as! HomeViewController
+            let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.homeVc) as! HomeViewController
             showViewController(destinationVc, sender: nil)
             
-            
+          //  self.navigationController?.popViewControllerAnimated(true)
         }
         else if indexPath.row == 1{
             
-            let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier("movies") as! MovieViewController
+            let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.moviesVc) as! MovieViewController
             showViewController(destinationVc, sender: nil)
             
         }
             
         else if indexPath.row == 2{
             
-            let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier("tv") as! TvViewController
+            let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.tvVc) as! TvViewController
             showViewController(destinationVc, sender: nil)
             
             
         }
         else if indexPath.row == 3{
             
-            let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier("celebs") as! CelebsViewController
+            let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.celebsVc) as! CelebsViewController
             showViewController(destinationVc, sender: nil)
             
         }

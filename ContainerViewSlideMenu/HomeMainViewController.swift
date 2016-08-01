@@ -28,7 +28,7 @@ class HomeMainViewController: UIViewController,UICollectionViewDelegate,UICollec
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("table_cell") as! TableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifiers.homeMainTableViewCell) as! TableViewCell
         return cell
         
     }
@@ -42,7 +42,7 @@ class HomeMainViewController: UIViewController,UICollectionViewDelegate,UICollec
         return 10
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collection_cell", forIndexPath: indexPath) as! CollectionViewCell
+     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.homeMainCollectionCellEmbeddedInTableCell, forIndexPath: indexPath) as! CollectionViewCell
        cell.imageView.image = UIImage(named: "Gallery-Icon")
         return cell
     }

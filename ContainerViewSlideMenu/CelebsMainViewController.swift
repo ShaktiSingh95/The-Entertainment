@@ -12,7 +12,7 @@ class CelebsMainViewController: UIViewController,UICollectionViewDelegate,UIColl
 
     @IBOutlet weak var popularCelebsCollectionView: UICollectionView!
     @IBOutlet weak var celebsCategoriesTableView: UITableView!
-    private var tableContent = ["Aired Today","On The Air","Latest","Top Rated","Most Popular"]
+    private var tableContent = ["Popular","New Celebs"]
     var popualarCelebs = [Celebs]()
 
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class CelebsMainViewController: UIViewController,UICollectionViewDelegate,UIColl
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         print("*****Asking for cell")
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("popular_celebs_cell", forIndexPath: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.celebsMainCollectionCell, forIndexPath: indexPath) as! CollectionViewCell
         cell.imageView.image = popualarCelebs[indexPath.row].posterImage
         return cell
     }
@@ -53,12 +53,25 @@ class CelebsMainViewController: UIViewController,UICollectionViewDelegate,UIColl
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("celebs_table_cell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifiers.celebsMainTableCell)!
         cell.textLabel?.text = tableContent[indexPath.row]
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //code to take to new view controller to display demanded data
+
+        let row = indexPath.row
+        let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.requestedCelebsVc) as! RequestedCelebsViewController
+        switch row{
+            
+        case 0 : destinationVc.query = Constants.ApiSearchQueries.CelebsRelated.popular
+        case 1:
+            destinationVc.query = Constants.ApiSearchQueries.CelebsRelated.latest
+        default: break
+            
+            
+        }
+        self.showViewController(destinationVc, sender: nil)
+        
     }
 
 
