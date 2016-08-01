@@ -18,7 +18,6 @@ class AppModel{
             
             response in
             var movies = [Movies]()
-           // print(response.result.value!)
             let json = response.result.value!
             //          for subJson in json["results"]{
             //

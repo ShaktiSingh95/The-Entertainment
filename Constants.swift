@@ -43,6 +43,9 @@ class Constants{
     }
     struct cellIdentifiers{
         
+        static let homePopularMovieCell = "home_movie_cell"
+        static let homePopularTvCell = "home_tv_cell"
+        static let homePopularCelebsCell = "home_celeb_cell"
         static let homeMainTableViewCell = "table_cell"
         static let homeMainCollectionCellEmbeddedInTableCell = "collection_cell"
         static let movieMainCollectionCell = "popular_movie_cell"
@@ -51,10 +54,15 @@ class Constants{
         static let tvMainTableCell = "tv_table_cell"
         static let celebsMainCollectionCell = "popular_celebs_cell"
         static let celebsMainTableCell = "celebs_table_cell"
+        static let requestedListMovieCell = "movies_cell"
+        static let requestedListTvCell = "tv_show_cell"
+        static let requestedListCelebsCell = "celebs_cell"
+
     }
     struct imageIdentifiers{
         
         static let rightOptionMenuButtonImage = "si0010s"
+        static let placeHolderImage = "placeHolderImage"
         
     }
     enum ApiSearchQueries : String{

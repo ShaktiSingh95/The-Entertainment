@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+import Kingfisher
 class MovieMainViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var popularMoviesCollectionView: UICollectionView!
     @IBOutlet weak var movieCategoryTableView: UITableView!
+    var placeHolderImage = UIImage(named:Constants.imageIdentifiers.placeHolderImage)
+
     private var tableContent = ["Upcoming","Top Rated","Most Popular"]
     var popualarMovies = [Movies]()
     override func viewDidLoad() {
@@ -27,24 +29,22 @@ class MovieMainViewController: UIViewController,UICollectionViewDelegate,UIColle
             self.popualarMovies = movies
             self.popularMoviesCollectionView.reloadData()
                     }
-        // Do any additional setup after loading the view.
         
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return popualarMovies.count
+        return 10
+        //popualarMovies.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         print("*****Asking for cell")
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.movieMainCollectionCell, forIndexPath: indexPath) as! CollectionViewCell
-        cell.imageView.image = popualarMovies[indexPath.row].posterImage
+        cell.imageView.kf_setImageWithURL(NSURL(string: "http://vignette1.wikia.nocookie.net/filmguide/images/b/be/Interstellar-poster.jpg/revision/latest?cb=20150226092240"), placeholderImage:placeHolderImage)
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //code to show details of the selected movies in new viewcontroller
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableContent.count
@@ -73,14 +73,6 @@ class MovieMainViewController: UIViewController,UICollectionViewDelegate,UIColle
         self.showViewController(destinationVc, sender: nil)
     
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
     
 }

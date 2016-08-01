@@ -7,43 +7,95 @@
 //
 
 import UIKit
+import Kingfisher
+class HomeMainViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
-class HomeMainViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
-
+    @IBOutlet weak var popularMoviesCollectionView: UICollectionView!
    
-        // Configure the view for the selected state
+    @IBOutlet weak var popularTvShowsCollectionView: UICollectionView!
  
-    @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak var popularCelebsCollectionView: UICollectionView!
     
+    var popularMovies = [Movies]()
+    var popularTvShows = [Tv]()
+    var popularCelebs = [Celebs]()
+    
+    var placeHolderImage = UIImage(named:Constants.imageIdentifiers.placeHolderImage)
     override func viewDidLoad() {
+        super.viewDidLoad()
         
-        self.homeTableView.dataSource=self
-        self.homeTableView.delegate=self
+        popularCelebsCollectionView.dataSource = self
+        popularMoviesCollectionView.dataSource = self
+        popularTvShowsCollectionView.dataSource = self
+        popularTvShowsCollectionView.delegate = self
+        popularMoviesCollectionView.delegate = self
+        popularCelebsCollectionView.delegate = self
         
-    }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        AppModel.fetchPerticularCelebs(Constants.ApiSearchQueries.CelebsRelated.popular){
         
-        return 3
-    
-    }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            celebs in
+            self.popularCelebs = celebs
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifiers.homeMainTableViewCell) as! TableViewCell
-        return cell
-        
-    }
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let cell = cell as! TableViewCell
-        cell.setCollectionViewDataSourceOrDelegate(self, delegate: self)
+        }
+        AppModel.fetchPerticularMovies(Constants.ApiSearchQueries.MovieRelated.popularMovies){
+            
+            movies in
+            self.popularMovies = movies
+            
+        }
+        AppModel.fetchPerticularTvShows(Constants.ApiSearchQueries.TvRelated.popular){
+            
+            tvShows in
+            self.popularTvShows = tvShows
+            
+        }
         
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+//        if collectionView == popularCelebsCollectionView{
+//            
+//            return popularCelebs.count
+//            
+//        }
+//        else if collectionView == popularMoviesCollectionView{
+//            
+//            return popularMovies.count
+//            
+//        }
+//        else {
+//            
+//            return popularTvShows.count
+//            
+//        }
+        
         return 10
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.homeMainCollectionCellEmbeddedInTableCell, forIndexPath: indexPath) as! CollectionViewCell
-       cell.imageView.image = UIImage(named: "Gallery-Icon")
-        return cell
+        
+    
+        if collectionView == popularCelebsCollectionView{
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.homePopularCelebsCell, forIndexPath: indexPath) as! CollectionViewCell
+            cell.imageView.kf_setImageWithURL(NSURL(string: "http://vignette1.wikia.nocookie.net/filmguide/images/b/be/Interstellar-poster.jpg/revision/latest?cb=20150226092240"), placeholderImage: placeHolderImage)
+            return cell
+            
+        }
+        else if collectionView == popularMoviesCollectionView{
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.homePopularMovieCell, forIndexPath: indexPath) as! CollectionViewCell
+             cell.imageView.kf_setImageWithURL(NSURL(string: "http://vignette1.wikia.nocookie.net/filmguide/images/b/be/Interstellar-poster.jpg/revision/latest?cb=20150226092240"), placeholderImage: placeHolderImage)
+            return cell
+            
+        }
+        else{
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.homePopularTvCell, forIndexPath: indexPath) as! CollectionViewCell
+             cell.imageView.kf_setImageWithURL(NSURL(string: "http://vignette1.wikia.nocookie.net/filmguide/images/b/be/Interstellar-poster.jpg/revision/latest?cb=20150226092240"), placeholderImage: placeHolderImage)
+       return cell
+        
+        }
+        
     }
-}
+   
+   }

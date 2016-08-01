@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class TvMainViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDataSource,UITableViewDelegate{
 
     @IBOutlet weak var popularTvCollectionView: UICollectionView!
@@ -15,6 +15,7 @@ class TvMainViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
     private var tableContent = ["Aired Today","On The Air","Latest","Top Rated","Most Popular"]
     var popualarTvShows = [Tv]()
+    var placeHolderImage = UIImage(named:Constants.imageIdentifiers.placeHolderImage)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,20 +31,19 @@ class TvMainViewController: UIViewController,UICollectionViewDelegate,UICollecti
             self.popularTvCollectionView.reloadData()
         }
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return popualarTvShows.count
+        return 4
+        //popualarTvShows.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         print("*****Asking for cell")
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.tvMainCollectionCell, forIndexPath: indexPath) as! CollectionViewCell
-        cell.imageView.image = popualarTvShows[indexPath.row].posterImage
+        cell.imageView.kf_setImageWithURL(NSURL(string: "http://vignette1.wikia.nocookie.net/filmguide/images/b/be/Interstellar-poster.jpg/revision/latest?cb=20150226092240"), placeholderImage:placeHolderImage)
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -80,14 +80,5 @@ class TvMainViewController: UIViewController,UICollectionViewDelegate,UICollecti
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
