@@ -33,5 +33,5 @@ class CelebsViewController: SlideMenuController {
         super.didReceiveMemoryWarning()
     }
     
-
-   }
+    
+}

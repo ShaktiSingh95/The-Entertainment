@@ -25,6 +25,31 @@ class Constants{
     //
     //    }
     //
+    enum ApiSearchQueries : String{
+        case apiKey = "ce7724b78a09f5436d559f3e56ad4ffa"
+        enum MovieRelated : String{
+            case popularMovies = "https://api.themoviedb.org/3/movie/popular"
+            case topRatedMovies = "https://api.themoviedb.org/3/movie/top_rated"
+            case upcomingMovies = "https://api.themoviedb.org/3/movie/upcoming"
+            
+        }
+        enum TvRelated:String{
+            
+            case airedToday="https://api.themoviedb.org/3/tv/airing_today"
+            case onTheAir="https://api.themoviedb.org/3/tv/on_the_air"
+            case latest="https://api.themoviedb.org/3/tv/latest"
+            case topRated="https://api.themoviedb.org/3/tv/top_rated"
+            case popular="https://api.themoviedb.org/3/tv/popular"
+            
+        }
+        enum CelebsRelated:String {
+            
+            case popular = "https://api.themoviedb.org/3/person/popular"
+            case latest = "https://api.themoviedb.org/3/person/latest"
+            
+        }
+    }
+    
     struct viewControllerIdentifiers{
         
         static let rightSliderVc = "app_right"
@@ -57,36 +82,12 @@ class Constants{
         static let requestedListMovieCell = "movies_cell"
         static let requestedListTvCell = "tv_show_cell"
         static let requestedListCelebsCell = "celebs_cell"
-
+        
     }
     struct imageIdentifiers{
         
         static let rightOptionMenuButtonImage = "si0010s"
         static let placeHolderImage = "placeHolderImage"
         
-    }
-    enum ApiSearchQueries : String{
-        case apiKey = "ce7724b78a09f5436d559f3e56ad4ffa"
-        enum MovieRelated : String{
-            case popularMovies = "https://api.themoviedb.org/3/movie/popular"
-            case topRatedMovies = "https://api.themoviedb.org/3/movie/top_rated"
-            case upcomingMovies = "https://api.themoviedb.org/3/movie/upcoming"
-            
-        }
-        enum TvRelated:String{
-            
-            case airedToday="https://api.themoviedb.org/3/tv/airing_today"
-            case onTheAir="https://api.themoviedb.org/3/tv/on_the_air"
-            case latest="https://api.themoviedb.org/3/tv/latest"
-            case topRated="https://api.themoviedb.org/3/tv/top_rated"
-            case popular="https://api.themoviedb.org/3/tv/popular"
-            
-        }
-        enum CelebsRelated:String {
-            
-            case popular = "https://api.themoviedb.org/3/person/popular"
-            case latest = "https://api.themoviedb.org/3/person/latest"
-            
-        }
     }
 }

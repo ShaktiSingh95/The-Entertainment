@@ -11,7 +11,7 @@ import UIKit
 class RequestedCelebsViewController: UITableViewController {
     var query: Constants.ApiSearchQueries.CelebsRelated!
     @IBOutlet var celebsList: UITableView!
-    var celebsFetched = [Celebs]()
+    var celebsFetched = [Celeb]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.celebsList.dataSource = self
@@ -23,9 +23,9 @@ class RequestedCelebsViewController: UITableViewController {
             self.celebsList.reloadData()
             
         }
-      
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

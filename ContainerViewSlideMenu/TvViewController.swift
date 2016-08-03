@@ -9,7 +9,7 @@
 import UIKit
 import SlideMenuControllerSwift
 class TvViewController: SlideMenuController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addRightBarButtonWithImage(UIImage(named: Constants.imageIdentifiers.rightOptionMenuButtonImage)!)
@@ -34,7 +34,7 @@ class TvViewController: SlideMenuController {
         super.didReceiveMemoryWarning()
     }
     
-
-   
-
+    
+    
+    
 }

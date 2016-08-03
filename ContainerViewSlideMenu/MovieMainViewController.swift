@@ -13,9 +13,13 @@ class MovieMainViewController: UIViewController,UICollectionViewDelegate,UIColle
     @IBOutlet weak var popularMoviesCollectionView: UICollectionView!
     @IBOutlet weak var movieCategoryTableView: UITableView!
     var placeHolderImage = UIImage(named:Constants.imageIdentifiers.placeHolderImage)
-
+    
     private var tableContent = ["Upcoming","Top Rated","Most Popular"]
-    var popualarMovies = [Movies]()
+    // ***  ***  ***  ***
+    //bound to declare this array because xcode was not allowing to define static cells of table view
+    //until the viewcontroller was a table view controller, which in this case is not
+    // ***  ***  ***  ***
+    var popualarMovies = [Movie]()
     override func viewDidLoad() {
         super.viewDidLoad()
         popularMoviesCollectionView.dataSource = self
@@ -28,7 +32,7 @@ class MovieMainViewController: UIViewController,UICollectionViewDelegate,UIColle
             movies in
             self.popualarMovies = movies
             self.popularMoviesCollectionView.reloadData()
-                    }
+        }
         
     }
     override func didReceiveMemoryWarning() {
@@ -36,15 +40,19 @@ class MovieMainViewController: UIViewController,UICollectionViewDelegate,UIColle
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
-        //popualarMovies.count
+        // *** must return popualarMovies.count after the error is fixed ***
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        print("*****Asking for cell")
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.movieMainCollectionCell, forIndexPath: indexPath) as! CollectionViewCell
-        cell.imageView.kf_setImageWithURL(NSURL(string: "http://vignette1.wikia.nocookie.net/filmguide/images/b/be/Interstellar-poster.jpg/revision/latest?cb=20150226092240"), placeholderImage:placeHolderImage)
+        cell.imageView.kf_setImageWithURL(NSURL(string: ""), placeholderImage:placeHolderImage)
+        // *** should send popularMovies.posterImagePath when the error is fixed ***
+        
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        //code to show details of the selected MOVIE in new viewcontroller
+        
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableContent.count
@@ -56,7 +64,7 @@ class MovieMainViewController: UIViewController,UICollectionViewDelegate,UIColle
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
+        
         let row = indexPath.row
         let destinationVc = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.viewControllerIdentifiers.requestedMoviesVc) as! RequestedMovieListViewController
         switch row{
@@ -71,7 +79,7 @@ class MovieMainViewController: UIViewController,UICollectionViewDelegate,UIColle
             
         }
         self.showViewController(destinationVc, sender: nil)
-    
+        
     }
     
     

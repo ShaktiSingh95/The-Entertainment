@@ -9,10 +9,10 @@
 import UIKit
 
 class RequestedMovieListViewController: UITableViewController {
-
+    
     var query : Constants.ApiSearchQueries.MovieRelated!
     @IBOutlet var movieListTableView: UITableView!
-    var moviesFetched = [Movies]()
+    var moviesFetched = [Movie]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.movieListTableView.dataSource = self
@@ -24,7 +24,7 @@ class RequestedMovieListViewController: UITableViewController {
             self.movieListTableView.reloadData()
             
         }
-
+        
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return moviesFetched.count

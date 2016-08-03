@@ -10,8 +10,9 @@ import Foundation
 import SwiftyJSON
 class Tv{
     var posterImage:UIImage!
+    //this class is not complete
     init(json: JSON){
-       posterImage = nil
+        posterImage = nil
     }
     
 }

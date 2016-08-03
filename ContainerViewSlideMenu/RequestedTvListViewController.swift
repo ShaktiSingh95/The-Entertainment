@@ -9,7 +9,7 @@
 import UIKit
 
 class RequestedTvListViewController: UITableViewController {
-
+    
     var query: Constants.ApiSearchQueries.TvRelated!
     var tvFetched = [Tv]()
     @IBOutlet var tvList: UITableView!
@@ -24,16 +24,16 @@ class RequestedTvListViewController: UITableViewController {
             self.tvList.reloadData()
             
         }
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
     
-
+    
+    
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tvFetched.count
     }
@@ -42,10 +42,10 @@ class RequestedTvListViewController: UITableViewController {
         cell.cellImageView.image = UIImage(named: "Gallery-Icon")
         cell.cellInfo.text = "dsf"
         return cell
-
+        
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-     //further code
+        //further code
     }
-  
+    
 }

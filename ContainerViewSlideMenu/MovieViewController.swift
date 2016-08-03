@@ -9,7 +9,7 @@
 import UIKit
 import SlideMenuControllerSwift
 class MovieViewController: SlideMenuController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addRightBarButtonWithImage(UIImage(named: Constants.imageIdentifiers.rightOptionMenuButtonImage)!)
@@ -35,5 +35,5 @@ class MovieViewController: SlideMenuController {
         super.didReceiveMemoryWarning()
     }
     
-
-   }
+    
+}

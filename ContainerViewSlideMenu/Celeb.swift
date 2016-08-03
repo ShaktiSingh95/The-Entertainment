@@ -8,10 +8,11 @@
 
 import Foundation
 import SwiftyJSON
-class Celebs{
+class Celeb{
     
     var posterImage: UIImage!
     init(json: JSON){
+        //this class is not complete
         
         posterImage = nil
         

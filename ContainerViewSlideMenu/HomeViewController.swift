@@ -1,6 +1,6 @@
 //
 //  AppViewController.swift
-//  
+//
 //
 //  Created by Shakti Pratap Singh on 26/07/16.
 //
@@ -9,7 +9,7 @@
 import UIKit
 import SlideMenuControllerSwift
 class HomeViewController: SlideMenuController {
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class HomeViewController: SlideMenuController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.closeRight()
-
+        
     }
     override func awakeFromNib(){
         
@@ -37,6 +37,6 @@ class HomeViewController: SlideMenuController {
         super.didReceiveMemoryWarning()
     }
     
-
-   
+    
+    
 }

@@ -6,27 +6,27 @@
 //  Copyright © 2016 Shakti Pratap Singh. All rights reserved.
 //
 
+//*** error as soon as you comment out for loop ***
 import Foundation
 import Alamofire
 import SwiftyJSON
 
 class AppModel{
     
-    class func fetchPerticularMovies(queryUrl:Constants.ApiSearchQueries.MovieRelated,handler: [Movies]->Void){
+    class func fetchPerticularMovies(queryUrl:Constants.ApiSearchQueries.MovieRelated,handler: [Movie]->Void){
         var parameters:[String:AnyObject] = ["api_key": Constants.ApiSearchQueries.apiKey.rawValue]
         Alamofire.request(.GET, queryUrl.rawValue, parameters: parameters).responseJSON(){
             
             response in
-            var movies = [Movies]()
+            var movies = [Movie]()
             let json = response.result.value!
-            //          for subJson in json["results"]{
+            //                     for subJson in json["results"]{
             //
-            
-            //   movies.append(Movies(subJson))
-            //                movies.append(Movies(subJson))
             //
-            //      }
-            //handler(movies)
+            //                            movies.append(Movies(subJson))
+            //
+            //                }
+            //            handler(movies)
         }
     }
     class func fetchPerticularTvShows(queryUrl:Constants.ApiSearchQueries.TvRelated,handler: [Tv]->Void){
@@ -45,18 +45,18 @@ class AppModel{
         }
         
     }
-    class func fetchPerticularCelebs(queryUrl:Constants.ApiSearchQueries.CelebsRelated,handler: [Celebs]->Void){
+    class func fetchPerticularCelebs(queryUrl:Constants.ApiSearchQueries.CelebsRelated,handler: [Celeb]->Void){
         
         var parameters:[String:AnyObject]=["api_key":Constants.ApiSearchQueries.apiKey.rawValue]
         Alamofire.request(.GET, queryUrl.rawValue, parameters: parameters).responseJSON(){
             
             response in
-            var tvShows = [Tv]()
+            var celebs = [Celeb]()
             let json = response.result.value!
             print(json)
             //            for subJson in json["results"]{
-            //               tvShows.append(Tv(json: subJson))
-            //}
+            //               celebs.append(Tv(json: subJson))
+            //
             
         }
     }
