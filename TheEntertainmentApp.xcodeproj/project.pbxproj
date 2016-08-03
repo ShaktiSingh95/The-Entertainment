@@ -44,7 +44,7 @@
 		C377C8DA1D4BD29300FB73C4 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C377C8DC1D4BD2AD00FB73C4 /* Tv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tv.swift; sourceTree = "<group>"; };
 		C377C8DE1D4BD2C200FB73C4 /* Celeb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Celeb.swift; sourceTree = "<group>"; };
-		C38C9D141D47AA4B00FCDCC2 /* ContainerViewSlideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContainerViewSlideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38C9D141D47AA4B00FCDCC2 /* TheEntertainmentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheEntertainmentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38C9D171D47AA4B00FCDCC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C38C9D1C1D47AA4B00FCDCC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C38C9D1E1D47AA4B00FCDCC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		C38C9D151D47AA4B00FCDCC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C38C9D141D47AA4B00FCDCC2 /* ContainerViewSlideMenu.app */,
+				C38C9D141D47AA4B00FCDCC2 /* TheEntertainmentApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,9 +145,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C38C9D131D47AA4B00FCDCC2 /* ContainerViewSlideMenu */ = {
+		C38C9D131D47AA4B00FCDCC2 /* TheEntertainmentApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C38C9D261D47AA4B00FCDCC2 /* Build configuration list for PBXNativeTarget "ContainerViewSlideMenu" */;
+			buildConfigurationList = C38C9D261D47AA4B00FCDCC2 /* Build configuration list for PBXNativeTarget "TheEntertainmentApp" */;
 			buildPhases = (
 				184B3D7DC5ECFA2A4D57E769 /* [CP] Check Pods Manifest.lock */,
 				C38C9D101D47AA4B00FCDCC2 /* Sources */,
@@ -160,9 +160,9 @@
 			);
 			dependencies = (
 			);
-			name = ContainerViewSlideMenu;
+			name = TheEntertainmentApp;
 			productName = ContainerViewSlideMenu;
-			productReference = C38C9D141D47AA4B00FCDCC2 /* ContainerViewSlideMenu.app */;
+			productReference = C38C9D141D47AA4B00FCDCC2 /* TheEntertainmentApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -180,7 +180,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C38C9D0F1D47AA4B00FCDCC2 /* Build configuration list for PBXProject "ContainerViewSlideMenu" */;
+			buildConfigurationList = C38C9D0F1D47AA4B00FCDCC2 /* Build configuration list for PBXProject "TheEntertainmentApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -193,7 +193,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C38C9D131D47AA4B00FCDCC2 /* ContainerViewSlideMenu */,
+				C38C9D131D47AA4B00FCDCC2 /* TheEntertainmentApp */,
 			);
 		};
 /* End PBXProject section */
@@ -402,7 +402,7 @@
 				INFOPLIST_FILE = ContainerViewSlideMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.codekamp.ContainerViewSlideMenu;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheEntertainmentApp;
 			};
 			name = Debug;
 		};
@@ -414,14 +414,14 @@
 				INFOPLIST_FILE = ContainerViewSlideMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.codekamp.ContainerViewSlideMenu;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheEntertainmentApp;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C38C9D0F1D47AA4B00FCDCC2 /* Build configuration list for PBXProject "ContainerViewSlideMenu" */ = {
+		C38C9D0F1D47AA4B00FCDCC2 /* Build configuration list for PBXProject "TheEntertainmentApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C38C9D241D47AA4B00FCDCC2 /* Debug */,
@@ -430,7 +430,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C38C9D261D47AA4B00FCDCC2 /* Build configuration list for PBXNativeTarget "ContainerViewSlideMenu" */ = {
+		C38C9D261D47AA4B00FCDCC2 /* Build configuration list for PBXNativeTarget "TheEntertainmentApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C38C9D271D47AA4B00FCDCC2 /* Debug */,

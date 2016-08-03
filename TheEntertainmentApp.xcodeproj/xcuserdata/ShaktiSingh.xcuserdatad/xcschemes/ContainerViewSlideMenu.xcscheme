@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C38C9D131D47AA4B00FCDCC2"
-               BuildableName = "ContainerViewSlideMenu.app"
-               BlueprintName = "ContainerViewSlideMenu"
-               ReferencedContainer = "container:ContainerViewSlideMenu.xcodeproj">
+               BuildableName = "TheEntertainmentApp.app"
+               BlueprintName = "TheEntertainmentApp"
+               ReferencedContainer = "container:TheEntertainmentApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C38C9D131D47AA4B00FCDCC2"
-            BuildableName = "ContainerViewSlideMenu.app"
-            BlueprintName = "ContainerViewSlideMenu"
-            ReferencedContainer = "container:ContainerViewSlideMenu.xcodeproj">
+            BuildableName = "TheEntertainmentApp.app"
+            BlueprintName = "TheEntertainmentApp"
+            ReferencedContainer = "container:TheEntertainmentApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C38C9D131D47AA4B00FCDCC2"
-            BuildableName = "ContainerViewSlideMenu.app"
-            BlueprintName = "ContainerViewSlideMenu"
-            ReferencedContainer = "container:ContainerViewSlideMenu.xcodeproj">
+            BuildableName = "TheEntertainmentApp.app"
+            BlueprintName = "TheEntertainmentApp"
+            ReferencedContainer = "container:TheEntertainmentApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C38C9D131D47AA4B00FCDCC2"
-            BuildableName = "ContainerViewSlideMenu.app"
-            BlueprintName = "ContainerViewSlideMenu"
-            ReferencedContainer = "container:ContainerViewSlideMenu.xcodeproj">
+            BuildableName = "TheEntertainmentApp.app"
+            BlueprintName = "TheEntertainmentApp"
+            ReferencedContainer = "container:TheEntertainmentApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
