@@ -8,24 +8,7 @@
 
 import Foundation
 class Constants{
-    //
-    //    struct apiSearchQueries {
-    //
-    //        static let baseUrl = "https://api.themoviedb.org/3/"
-    //        static let apiKey = "ce7724b78a09f5436d559f3e56ad4ffa"
-    //        struct movieRelated {
-    //            static let popularMovies=apiSearchQueries.baseUrl + "movie/popular"
-    //            static let topRatedMovies=apiSearchQueries.baseUrl + "movie/top_rated"
-    //            static let upcoming=apiSearchQueries.baseUrl + "movies/upcoming"
-    //        }
-    //        struct tvRelated {
-    //            static let airedToday=apiSearchQueries.baseUrl + "tv/airing_today"
-    //        }
-    //
-    //
-    //    }
-    //
-    enum ApiSearchQueries : String{
+      enum ApiSearchQueries : String{
         case apiKey = "ce7724b78a09f5436d559f3e56ad4ffa"
         enum MovieRelated : String{
             case popularMovies = "https://api.themoviedb.org/3/movie/popular"
@@ -88,6 +71,11 @@ class Constants{
         
         static let rightOptionMenuButtonImage = "si0010s"
         static let placeHolderImage = "placeHolderImage"
+        
+    }
+    struct imageUrls{
+        
+        static let baseImageUrl = "http://image.tmdb.org/t/p/w500"
         
     }
 }

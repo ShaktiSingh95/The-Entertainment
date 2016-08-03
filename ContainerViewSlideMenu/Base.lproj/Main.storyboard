@@ -9,7 +9,7 @@
         <!--Home View Controller-->
         <scene sceneID="Lwv-Vf-idk">
             <objects>
-                <viewController storyboardIdentifier="home" id="FC1-Nw-r4Z" customClass="HomeViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" id="FC1-Nw-r4Z" customClass="HomeViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9zQ-ML-Jq6"/>
                         <viewControllerLayoutGuide type="bottom" id="17f-6x-cVg"/>
@@ -28,7 +28,7 @@
         <!--Home Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="home_main" id="BYZ-38-t0r" customClass="HomeMainViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home_main" id="BYZ-38-t0r" customClass="HomeMainViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -49,7 +49,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="home_movie_cell" id="8WT-C6-i2D" customClass="CollectionViewCell" customModule="ContainerViewSlideMenu" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="home_movie_cell" id="8WT-C6-i2D" customClass="CollectionViewCell" customModule="TheEntertainmentApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3" width="129" height="138"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -100,7 +100,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="home_tv_cell" id="2kk-co-Bsh" customClass="CollectionViewCell" customModule="ContainerViewSlideMenu" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="home_tv_cell" id="2kk-co-Bsh" customClass="CollectionViewCell" customModule="TheEntertainmentApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2" width="129" height="138"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -143,7 +143,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="home_celeb_cell" id="zVo-oK-3hX" customClass="CollectionViewCell" customModule="ContainerViewSlideMenu" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="home_celeb_cell" id="zVo-oK-3hX" customClass="CollectionViewCell" customModule="TheEntertainmentApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="3" width="129" height="138"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -209,13 +209,13 @@
         <!--Requested Movie List View Controller-->
         <scene sceneID="FJM-NJ-2Rh">
             <objects>
-                <tableViewController storyboardIdentifier="movies_list" id="zbw-un-H8o" customClass="RequestedMovieListViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="movies_list" id="zbw-un-H8o" customClass="RequestedMovieListViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ug7-3A-UPt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movies_cell" rowHeight="152" id="p2J-wu-uej" customClass="RequestedTypeTableViewCell" customModule="ContainerViewSlideMenu" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movies_cell" rowHeight="152" id="p2J-wu-uej" customClass="RequestedTypeTableViewCell" customModule="TheEntertainmentApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="152"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p2J-wu-uej" id="lmj-de-Lcw">
@@ -267,13 +267,13 @@
         <!--Requested Tv List View Controller-->
         <scene sceneID="Z5D-Tp-oSL">
             <objects>
-                <tableViewController storyboardIdentifier="tv_list" id="yhx-E0-sq3" customClass="RequestedTvListViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="tv_list" id="yhx-E0-sq3" customClass="RequestedTvListViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="28" sectionFooterHeight="28" id="ljn-3k-b7q">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tv_show_cell" rowHeight="147" id="9hu-xy-tfa" customClass="RequestedTypeTableViewCell" customModule="ContainerViewSlideMenu" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tv_show_cell" rowHeight="147" id="9hu-xy-tfa" customClass="RequestedTypeTableViewCell" customModule="TheEntertainmentApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="147"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9hu-xy-tfa" id="pej-Dp-u86">
@@ -321,13 +321,13 @@
         <!--Requested Celebs View Controller-->
         <scene sceneID="hB3-Lb-Dv8">
             <objects>
-                <tableViewController storyboardIdentifier="celebs_list" id="9q1-t5-LLX" customClass="RequestedCelebsViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="celebs_list" id="9q1-t5-LLX" customClass="RequestedCelebsViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="142" sectionHeaderHeight="28" sectionFooterHeight="28" id="WEf-3U-d3b">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celebs_cell" rowHeight="142" id="O7c-vv-eoi" customClass="RequestedTypeTableViewCell" customModule="ContainerViewSlideMenu" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celebs_cell" rowHeight="142" id="O7c-vv-eoi" customClass="RequestedTypeTableViewCell" customModule="TheEntertainmentApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="142"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O7c-vv-eoi" id="s5G-Tt-CbD">
@@ -397,7 +397,7 @@
         <!--Right View Controller-->
         <scene sceneID="dZB-GB-SQn">
             <objects>
-                <tableViewController storyboardIdentifier="app_right" id="SjP-fa-PG7" customClass="rightViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="app_right" id="SjP-fa-PG7" customClass="rightViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rbH-ST-7S6" userLabel="Right Table View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -500,7 +500,7 @@
         <!--Movie View Controller-->
         <scene sceneID="4xs-rS-7Vb">
             <objects>
-                <viewController storyboardIdentifier="movies" id="lNw-tE-jQ7" customClass="MovieViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="movies" id="lNw-tE-jQ7" customClass="MovieViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sgY-lI-TxH"/>
                         <viewControllerLayoutGuide type="bottom" id="cM0-fA-lTu"/>
@@ -518,7 +518,7 @@
         <!--Tv View Controller-->
         <scene sceneID="FyM-Ka-59c">
             <objects>
-                <viewController storyboardIdentifier="tv" id="17q-Po-hnU" customClass="TvViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tv" id="17q-Po-hnU" customClass="TvViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jzx-RI-Uei"/>
                         <viewControllerLayoutGuide type="bottom" id="PqD-jH-XVv"/>
@@ -536,7 +536,7 @@
         <!--Tv Main View Controller-->
         <scene sceneID="y6I-Tk-pme">
             <objects>
-                <viewController storyboardIdentifier="tv_main" id="RIR-kv-qF8" customClass="TvMainViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tv_main" id="RIR-kv-qF8" customClass="TvMainViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iza-kd-Acy"/>
                         <viewControllerLayoutGuide type="bottom" id="Vmj-nj-JpM"/>
@@ -557,7 +557,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popular_tv_cell" id="q9e-nN-JAx" customClass="CollectionViewCell" customModule="ContainerViewSlideMenu" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popular_tv_cell" id="q9e-nN-JAx" customClass="CollectionViewCell" customModule="TheEntertainmentApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="117" height="127"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -645,7 +645,7 @@
         <!--Movie Main View Controller-->
         <scene sceneID="hb5-tI-Gqf">
             <objects>
-                <viewController storyboardIdentifier="movie_main" id="nks-AE-HOE" customClass="MovieMainViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="movie_main" id="nks-AE-HOE" customClass="MovieMainViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TwY-dp-NVC"/>
                         <viewControllerLayoutGuide type="bottom" id="fFN-Ee-KFp"/>
@@ -667,14 +667,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popular_movie_cell" id="DTP-jP-jK0" customClass="CollectionViewCell" customModule="ContainerViewSlideMenu" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popular_movie_cell" id="DTP-jP-jK0" customClass="CollectionViewCell" customModule="TheEntertainmentApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2" width="129" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="129" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolderImage" translatesAutoresizingMaskIntoConstraints="NO" id="AFT-fp-0GO">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AFT-fp-0GO">
                                                     <rect key="frame" x="0.0" y="0.0" width="129" height="128"/>
                                                 </imageView>
                                             </subviews>
@@ -767,7 +767,7 @@
         <!--Celebs View Controller-->
         <scene sceneID="M5U-cW-7Z1">
             <objects>
-                <viewController storyboardIdentifier="celebs" id="KJs-2p-sNF" customClass="CelebsViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="celebs" id="KJs-2p-sNF" customClass="CelebsViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9DE-iY-a2J"/>
                         <viewControllerLayoutGuide type="bottom" id="0wo-kO-Jer"/>
@@ -785,7 +785,7 @@
         <!--Celebs Main View Controller-->
         <scene sceneID="66a-pe-acv">
             <objects>
-                <viewController storyboardIdentifier="celebs_main" id="f6D-Fe-evC" customClass="CelebsMainViewController" customModule="ContainerViewSlideMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="celebs_main" id="f6D-Fe-evC" customClass="CelebsMainViewController" customModule="TheEntertainmentApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DSN-9P-9pL"/>
                         <viewControllerLayoutGuide type="bottom" id="lqL-Ok-Nss"/>
@@ -806,7 +806,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popular_celebs_cell" id="RSp-4S-7Kt" customClass="CollectionViewCell" customModule="ContainerViewSlideMenu" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popular_celebs_cell" id="RSp-4S-7Kt" customClass="CollectionViewCell" customModule="TheEntertainmentApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="117" height="127"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

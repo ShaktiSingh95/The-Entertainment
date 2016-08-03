@@ -13,11 +13,15 @@ class CelebsMainViewController: UIViewController,UICollectionViewDelegate,UIColl
     @IBOutlet weak var popularCelebsCollectionView: UICollectionView!
     @IBOutlet weak var celebsCategoriesTableView: UITableView!
     private var tableContent = ["Popular","New Celebs"]
-    // ***  ***  ***  ***
-    //bound to declare this array because xcode was not allowing to define static cells of table view
-    //until the viewcontroller was a table view controller, which in this case is not
-    // ***  ***  ***  ***
-    var popualarCelebs = [Celeb]()
+    var popularCelebs = [Celeb](){
+        
+        didSet{
+            
+            self.popularCelebsCollectionView.reloadData()
+            
+        }
+        
+    }
     var placeHolderImage = UIImage(named:Constants.imageIdentifiers.placeHolderImage)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +33,7 @@ class CelebsMainViewController: UIViewController,UICollectionViewDelegate,UIColl
         AppModel.fetchPerticularCelebs(Constants.ApiSearchQueries.CelebsRelated.popular){
             
             celebs in
-            self.popualarCelebs = celebs
-            self.popularCelebsCollectionView.reloadData()
+            self.popularCelebs = celebs
         }
         
     }
@@ -39,22 +42,18 @@ class CelebsMainViewController: UIViewController,UICollectionViewDelegate,UIColl
         super.didReceiveMemoryWarning()
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-        // *** should return popualarCelebs.count when the error is fixed ***
+        return popularCelebs.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        print("*****Asking for cell")
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.celebsMainCollectionCell, forIndexPath: indexPath) as! CollectionViewCell
         
-        cell.imageView.kf_setImageWithURL(NSURL(string: ""), placeholderImage:placeHolderImage)
+       cell.imageView.kf_setImageWithURL(NSURL(string: popularCelebs[indexPath.row].profileImagePath!), placeholderImage:placeHolderImage)
         
-        // *** should send popularCelebs.posterImagePath in nsurl when the error is fixed ***
         
         
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //code to show details of the selected CELEB in new viewcontroller
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableContent.count

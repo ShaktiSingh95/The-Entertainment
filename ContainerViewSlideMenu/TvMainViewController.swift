@@ -14,12 +14,16 @@ class TvMainViewController: UIViewController,UICollectionViewDelegate,UICollecti
     @IBOutlet weak var tvCategoriesTableView: UITableView!
     
     private var tableContent = ["Aired Today","On The Air","Latest","Top Rated","Most Popular"]
-    //*********************
-    //bound to declare this array because xcode was not allowing to define static cells of table view
-    //until the viewcontroller was a table view controller, which in this case is not
-    //*********************
     
-    var popualarTvShows = [Tv]()
+    var popualarTvShows = [Tv](){
+        
+        didSet{
+            
+            self.popularTvCollectionView.reloadData()
+            
+        }
+        
+    }
     var placeHolderImage = UIImage(named:Constants.imageIdentifiers.placeHolderImage)
     
     override func viewDidLoad() {
@@ -33,7 +37,6 @@ class TvMainViewController: UIViewController,UICollectionViewDelegate,UICollecti
             
             tvShows in
             self.popualarTvShows = tvShows
-            self.popularTvCollectionView.reloadData()
         }
         
     }
@@ -42,20 +45,17 @@ class TvMainViewController: UIViewController,UICollectionViewDelegate,UICollecti
         super.didReceiveMemoryWarning()
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return popualarTvShows.count
         //*** should return popualarTvShows.count when error is fixed ***
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        print("*****Asking for cell")
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.tvMainCollectionCell, forIndexPath: indexPath) as! CollectionViewCell
-        cell.imageView.kf_setImageWithURL(NSURL(string: ""), placeholderImage:placeHolderImage)
+        cell.imageView.kf_setImageWithURL(NSURL(string: popualarTvShows[indexPath.row].posterImagePath!), placeholderImage:placeHolderImage)
         
-        // *** should send popularMovies.posterImagePath in nsurl when the error is fixed ***
         
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        // *** code to show details of the selected TV in new viewcontroller ***
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableContent.count

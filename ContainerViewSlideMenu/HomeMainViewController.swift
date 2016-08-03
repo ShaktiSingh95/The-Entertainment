@@ -16,9 +16,33 @@ class HomeMainViewController: UIViewController,UICollectionViewDelegate,UICollec
     
     @IBOutlet weak var popularCelebsCollectionView: UICollectionView!
     
-    var popularMovies = [Movie]()
-    var popularTvShows = [Tv]()
-    var popularCelebs = [Celeb]()
+    var popularMovies = [Movie](){
+    
+        didSet{
+            
+            self.popularMoviesCollectionView.reloadData()
+            
+        }
+    
+    }
+    var popularTvShows = [Tv](){
+        
+        didSet{
+            
+            self.popularTvShowsCollectionView.reloadData()
+            
+        }
+        
+    }
+    var popularCelebs = [Celeb](){
+        
+        didSet{
+     
+            self.popularCelebsCollectionView.reloadData()
+            
+        }
+        
+    }
     
     var placeHolderImage = UIImage(named:Constants.imageIdentifiers.placeHolderImage)
     override func viewDidLoad() {
@@ -52,25 +76,22 @@ class HomeMainViewController: UIViewController,UICollectionViewDelegate,UICollec
         
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //  ***  Uncomment this when the error is fixed  ***
         
-        //        if collectionView == popularCelebsCollectionView{
-        //
-        //            return popularCelebs.count
-        //
-        //        }
-        //        else if collectionView == popularMoviesCollectionView{
-        //
-        //            return popularMovies.count
-        //
-        //        }
-        //        else {
-        //
-        //            return popularTvShows.count
-        //
-        //        }
-        //*** comment this out when the error is fixed ***
-        return 10
+                if collectionView == popularCelebsCollectionView{
+        
+                    return popularCelebs.count
+        
+                }
+                else if collectionView == popularMoviesCollectionView{
+        
+                    return popularMovies.count
+        
+                }
+                else {
+        
+                    return popularTvShows.count
+        
+                }
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
@@ -78,8 +99,7 @@ class HomeMainViewController: UIViewController,UICollectionViewDelegate,UICollec
         if collectionView == popularCelebsCollectionView{
             
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.homePopularCelebsCell, forIndexPath: indexPath) as! CollectionViewCell
-            cell.imageView.kf_setImageWithURL(NSURL(string: ""), placeholderImage: placeHolderImage)
-            //*** should send popularMovies.posterImagePath in nsurl when the error is fixed
+            cell.imageView.kf_setImageWithURL(NSURL(string: popularCelebs[indexPath.row].profileImagePath!), placeholderImage: placeHolderImage)
             
             
             return cell
@@ -88,8 +108,7 @@ class HomeMainViewController: UIViewController,UICollectionViewDelegate,UICollec
         else if collectionView == popularMoviesCollectionView{
             
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.homePopularMovieCell, forIndexPath: indexPath) as! CollectionViewCell
-            cell.imageView.kf_setImageWithURL(NSURL(string: ""), placeholderImage: placeHolderImage)
-            //*** should send popularTvShows.posterImagePath in nsurl when the error is fixed
+            cell.imageView.kf_setImageWithURL(NSURL(string: popularMovies[indexPath.row].posterImagePath!), placeholderImage: placeHolderImage)
             
             return cell
             
@@ -97,8 +116,7 @@ class HomeMainViewController: UIViewController,UICollectionViewDelegate,UICollec
         else{
             
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.cellIdentifiers.homePopularTvCell, forIndexPath: indexPath) as! CollectionViewCell
-            cell.imageView.kf_setImageWithURL(NSURL(string: ""), placeholderImage: placeHolderImage)
-            //*** should send popularCelebs.posterImagePath in nsurl when the error is fixed
+            cell.imageView.kf_setImageWithURL(NSURL(string: popularTvShows[indexPath.row].posterImagePath!), placeholderImage: placeHolderImage)
             
             return cell
             

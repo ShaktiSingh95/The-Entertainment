@@ -10,13 +10,13 @@ import Foundation
 import SwiftyJSON
 class Movie{
     
-    var title:String!
-    var language:String!
-    var overview:String!
-    var releaseDate:String!
-    var averageVote:String!
-    var popularity:String!
-    var posterImagePath:String!
+    var title:String?
+    var language:String?
+    var overview:String?
+    var releaseDate:String?
+    var averageVote:String?
+    var popularity:String?
+    var posterImagePath:String?
     init(json:JSON){
         
         self.title = json["original_title"].string
@@ -24,7 +24,17 @@ class Movie{
         self.overview = json["overview"].string
         self.popularity = json["popularity"].string
         self.averageVote = json["vote_average"].string
-        self.posterImagePath = ""
-    }
+        if let path = json["poster_path"].string
+        {
+            
+            self.posterImagePath = Constants.imageUrls.baseImageUrl + path
+            
+            
+        }
+        else{
+            
+            self.posterImagePath = Constants.imageUrls.baseImageUrl
+            
+        }    }
     
 }

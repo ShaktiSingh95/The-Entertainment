@@ -6,7 +6,6 @@
 //  Copyright © 2016 Shakti Pratap Singh. All rights reserved.
 //
 
-//*** error as soon as you comment out for loop ***
 import Foundation
 import Alamofire
 import SwiftyJSON
@@ -19,14 +18,16 @@ class AppModel{
             
             response in
             var movies = [Movie]()
-            let json = response.result.value!
-            //                     for subJson in json["results"]{
-            //
-            //
-            //                            movies.append(Movies(subJson))
-            //
-            //                }
-            //            handler(movies)
+            
+            let json = JSON(response.result.value!)
+            
+            for (_,subJson) in json["results"] {
+                
+                
+                movies.append(Movie(json: subJson))
+                
+            }
+            handler(movies)
         }
     }
     class func fetchPerticularTvShows(queryUrl:Constants.ApiSearchQueries.TvRelated,handler: [Tv]->Void){
@@ -36,14 +37,14 @@ class AppModel{
             
             response in
             var tvShows = [Tv]()
-            let json = response.result.value!
-            print(json)
-            //            for subJson in json["results"]{
-            //               tvShows.append(Tv(json: subJson))
-            //}
+            let json = JSON(response.result.value!)
+            for (_,subJson) in json["results"]{
+                tvShows.append(Tv(json: subJson))
+            }
             
+            
+            handler(tvShows)
         }
-        
     }
     class func fetchPerticularCelebs(queryUrl:Constants.ApiSearchQueries.CelebsRelated,handler: [Celeb]->Void){
         
@@ -51,13 +52,15 @@ class AppModel{
         Alamofire.request(.GET, queryUrl.rawValue, parameters: parameters).responseJSON(){
             
             response in
+           
             var celebs = [Celeb]()
-            let json = response.result.value!
-            print(json)
-            //            for subJson in json["results"]{
-            //               celebs.append(Tv(json: subJson))
-            //
-            
+            let json = JSON(response.result.value!)
+            for (_,subJson) in json["results"]{
+
+                celebs.append(Celeb(json: subJson))
+                
+            }
+            handler(celebs)
         }
     }
 }
