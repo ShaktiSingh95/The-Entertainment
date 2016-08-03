@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				C357D8561D4BDBEE00D2440E /* Constants.swift */,
-				C38C9D161D47AA4B00FCDCC2 /* ContainerViewSlideMenu */,
+				C38C9D161D47AA4B00FCDCC2 /* TheEntertainmentApp */,
 				C38C9D151D47AA4B00FCDCC2 /* Products */,
 				12E2331A445340ECCA5E5725 /* Pods */,
 				6CA89F7F3F1675E45DE81E94 /* Frameworks */,
@@ -112,7 +112,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C38C9D161D47AA4B00FCDCC2 /* ContainerViewSlideMenu */ = {
+		C38C9D161D47AA4B00FCDCC2 /* TheEntertainmentApp */ = {
 			isa = PBXGroup;
 			children = (
 				C31899421D494BC400139197 /* AppModel.swift */,
@@ -139,6 +139,7 @@
 				C38C9D201D47AA4B00FCDCC2 /* LaunchScreen.storyboard */,
 				C38C9D231D47AA4B00FCDCC2 /* Info.plist */,
 			);
+			name = TheEntertainmentApp;
 			path = ContainerViewSlideMenu;
 			sourceTree = "<group>";
 		};
